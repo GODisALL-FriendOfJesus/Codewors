@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Sort Names By length</title></head>
+    <body>
+<script>
+function arrange(students){
+return students.split(" ").sort((a,b) => b.length - a.length || b.localeCompare(b) );
+
+}
+console.log(arrange(['kelly Hegay Kevin Abinadam Abijuru Boris Eric ']));
+</script>
+
+    </body>
+    </html>
