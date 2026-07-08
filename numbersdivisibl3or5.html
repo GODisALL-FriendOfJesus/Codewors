@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+function solution(number){
+  
+  if(number < 0)return 0;
+  let sum=0;
+  for(let i=0; i< number ; i ++){
+    if(i % 3 == 0 || i % 5 == 0){
+      if(i % 3 == 0 && i % 5 == 0){
+        sum +=i;
+        continue;
+      }
+      sum +=i;
+    }
+  }
+  return sum;
+}
+console.log(solution(30));
+</script>
+</body>
+</html>
