@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function verticalHistogram(s){
+//Letters sorted which are only capitals
+            const letters=Array.from(s).filter(c => c >= 'A' && c<='Z').sort();
+            //Validation
+            if(!letters.length) return "";
+            const counts=letters.reduce((acc,cur) =>(acc[c]=(acc[c] || 0)+1,{}));
+            const activeLetter=Object.keys(counts);
+            const maxHeight=Math.max(...Object.values(counts));
+
+            let lines=[];
+
+            for(let h=maxHeight;h>=1;h--){
+                const row=activeLetter.map(char=>counts[char] >= h ? "*" : " ").join( " ")
+                .join(" ");
+                lines.push(row.trimEnd());
+            }   
+         lines.push(activeLetter.join(" "));
+       return  lines.join("\n");
+
+        }
+        console.log(verticalHistogram());
+    </script>
+</body>
+</html>
