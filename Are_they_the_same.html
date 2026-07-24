@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+
+    </head>
+<body>
+<script>
+function comp(a, b) {
+  if (!a || !b) return false;
+  
+  const squaredA = a.map(x => x * x).sort((x, y) => x - y);
+  const sortedB = b.slice().sort((x, y) => x - y);
+  
+  return squaredA.length === sortedB.length && 
+         squaredA.every((val, index) => val === sortedB[index]);
+}
+
+</script>
+
+</body>
+    </html>
