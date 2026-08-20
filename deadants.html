@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+// An orderly trail of ants is marching across the park picnic area.
+
+// It looks something like this:
+
+// ..ant..ant.ant...ant.ant..ant.ant....ant..ant.ant.ant...ant..
+// But suddenly there is a rumour that a dropped chicken sandwich has been spotted on the ground ahead. The ants surge forward! Oh No, it's an ant stampede!!
+
+// Some of the slower ants are trampled, and their poor little ant bodies are broken up into scattered bits.
+
+
+ function deadAntCount(ants) {
+  if (!ants) return 0;
+  
+  const pureBits = ants.replaceAll('ant', '');
+  
+  const count = (char) => pureBits.split(char).length - 1;
+  
+  return Math.max(count('a'), count('n'), count('t'));
+}
+
+    </script>
+</body>
+</html>
